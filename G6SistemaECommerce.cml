@@ -3,7 +3,7 @@ ContextMap DDDSistemaECommerce{
     contains SeguimientoPedidosContexto
     contains EnviosContexto
     contains DevolucionesContexto
-    
+
     //Ventas
     contains OrdenesContexto
     contains PagosContexto
@@ -64,7 +64,6 @@ GestionCuentasEmpleadoContexto [P]<->[P]CapacitacionContexto
 //AGREGADO FINAL 
 StockContexto<->CatalogoProductosContexto
 GestionDeProductosContexto<->CatalogoProductosContexto
-EnviosContexto[D] <- [U]ClienteContexto
 ClienteContexto[D] <-[U]CatalogoProductosContexto
 PedidosyTransaccionesContexto[U]->[D] SeguimientoPedidosContexto
 LogisticayEnviosContexto <-> EnviosContexto
@@ -74,6 +73,8 @@ GestionCuentasEmpleadoContexto [SK]<->[SK] AutorizacionContexto
 SeguimientoPedidosContexto[D] <- [U]OrdenesContexto
 PagosContexto[P]<->[P]ClienteContexto
 PromocionesContexto[P]<->[P]PreferenciasClienteContexto
+LocalizacionContexto[D] <- [U]PerfilClienteContexto
+AutenticacionContexto[D] <- [U]RegistroClienteContexto
 
 }
 
