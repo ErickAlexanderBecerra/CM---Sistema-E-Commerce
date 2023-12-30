@@ -32,6 +32,13 @@ ContextMap DDDSistemaECommerce{
     contains LogisticayEnviosContexto
     contains AnalisisYReporteContexto
     contains PedidosyTransaccionesContexto
+    // AdministracionEmpleados
+    contains GestionCuentasEmpleadoContexto
+    contains CapacitacionContexto
+
+    //Marketing
+    contains CampanasPublicitariasContexto
+    contains EstrategiasPromocionalesContexto
 
 
 EnviosContexto [SK] <->[SK]SeguimientoPedidosContexto
@@ -52,6 +59,8 @@ ServicioClienteContexto [D]<-[U] PreferenciasClienteContexto
 CatalogoProductosContexto [SK]<->[SK] LogisticayEnviosContexto
 AnalisisYReporteContexto [D]<-[U] LogisticayEnviosContexto
 AnalisisYReporteContexto [D]<-[U] PedidosyTransaccionesContexto
+CampanasPublicitariasContexto [P]<->[P] EstrategiasPromocionalesContexto
+GestionCuentasEmpleadoContexto [CF]<- CapacitacionContexto
 
 //AGREGADO FINAL 
 StockContexto<->CatalogoProductosContexto
@@ -89,3 +98,7 @@ BoundedContext CatalogoProductosContexto
 BoundedContext LogisticayEnviosContexto
 BoundedContext AnalisisYReporteContexto
 BoundedContext PedidosyTransaccionesContexto
+BoundedContext CampanasPublicitariasContexto
+BoundedContext EstrategiasPromocionalesContexto
+BoundedContext GestionCuentasEmpleadoContexto
+BoundedContext CapacitacionContexto
