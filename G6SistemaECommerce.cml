@@ -1,37 +1,43 @@
 ContextMap DDDSistemaECommerce{
+    // Delivery
+    contains SeguimientoPedidosContexto
+    contains EnviosContexto
+    contains DevolucionesContexto
     
-    contains SeguimientoPedidosContext
-    contains EnviosContext
-    contains DevolucionesContext
-    contains AlmacenesContext
+    //Ventas
     contains OrdenesContexto
     contains PagosContexto
+    //Acceso
     contains AutenticacionContexto
 	contains AutorizacionContexto
+    //Gestion de Inventario
     contains StockContexto
     contains ProveedoresContexto
     contains AlmacenamientoContexto
     contains CalidadContexto
+    //Catalogo de productos 
     contains PromocionesContexto
     contains CatalogoInternoContexto
     contains TraduccionContexto
     contains LocalizacionContexto
     contains GestionDeProductosContexto
-    contains ClienteContext
-    contains ServicioClienteContext
-    contains RegistroClienteContext
-    contains PerfilClienteContext
-    contains PreferenciasClienteContext
-    contains CatalogoProductosContext
-    contains LogisticayEnviosContext
-    contains AnalisisYReporteContext
-    contains PedidosyTransaccionesContext
+    // Gestion de Clientes
+    contains ClienteContexto
+    contains ServicioClienteContexto
+    contains RegistroClienteContexto
+    contains PerfilClienteContexto
+    contains PreferenciasClienteContexto
+    // Almacenamiento de datos  
+    contains CatalogoProductosContexto
+    contains LogisticayEnviosContexto
+    contains AnalisisYReporteContexto
+    contains PedidosyTransaccionesContexto
 
 
-EnviosContext <-> SeguimientoPedidosContext
-EnviosContext <-> AlmacenesContext
-DevolucionesContext <-> AlmacenesContext
-DevolucionesContext <-> SeguimientoPedidosContext
+EnviosContexto <-> SeguimientoPedidosContexto
+EnviosContexto <-> AlmacenamientoContexto
+DevolucionesContexto <-> AlmacenamientoContexto
+DevolucionesContexto <-> SeguimientoPedidosContexto
 OrdenesContexto [P]<->[P] PagosContexto
 AutorizacionContexto <- AutenticacionContexto
 StockContexto [P]<->[P] ProveedoresContexto
@@ -40,20 +46,28 @@ AlmacenamientoContexto [U,S] -> [D,C] StockContexto
 GestionDeProductosContexto [SK] <-> [SK] CatalogoInternoContexto
 LocalizacionContexto [P] <-> [P] TraduccionContexto
 PromocionesContexto [P] <-> [P] GestionDeProductosContexto
-ClienteContext [SK]<->[SK] ServicioClienteContext
-ServicioClienteContext [D]<-[U] RegistroClienteContext
-ServicioClienteContext [D]<-[U] PerfilClienteContext
-ServicioClienteContext [D]<-[U] PreferenciasClienteContext
-CatalogoProductosContext [SK]<->[SK] LogisticayEnviosContext
-AnalisisYReporteContext [D]<-[U] LogisticayEnviosContext
-AnalisisYReporteContext [D]<-[U] PedidosyTransaccionesContext
+ClienteContexto [SK]<->[SK] ServicioClienteContexto
+ServicioClienteContexto [D]<-[U] RegistroClienteContexto
+ServicioClienteContexto [D]<-[U] PerfilClienteContexto
+ServicioClienteContexto [D]<-[U] PreferenciasClienteContexto
+CatalogoProductosContexto [SK]<->[SK] LogisticayEnviosContexto
+AnalisisYReporteContexto [D]<-[U] LogisticayEnviosContexto
+AnalisisYReporteContexto [D]<-[U] PedidosyTransaccionesContexto
+
+//AGREGADO FINAL 
+StockContexto<->CatalogoProductosContexto
+GestionDeProductosContexto<->CatalogoProductosContexto
+EnviosContexto[D] <- [U]ClienteContexto
+ClienteContexto[D] <-[U]CatalogoProductosContexto
+PedidosyTransaccionesContexto[U]->[D] SeguimientoPedidosContexto
+LogisticayEnviosContexto <-> EnviosContexto
+LogisticayEnviosContexto <-> AlmacenamientoContexto
 
 }
 
-BoundedContext SeguimientoPedidosContext
-BoundedContext EnviosContext
-BoundedContext DevolucionesContext
-BoundedContext AlmacenesContext
+BoundedContext SeguimientoPedidosContexto
+BoundedContext EnviosContexto
+BoundedContext DevolucionesContexto
 BoundedContext OrdenesContexto
 BoundedContext PagosContexto
 BoundedContext AutenticacionContexto
@@ -67,12 +81,12 @@ BoundedContext CatalogoInternoContexto
 BoundedContext TraduccionContexto
 BoundedContext LocalizacionContexto
 BoundedContext GestionDeProductosContexto
-BoundedContext ClienteContext
-BoundedContext ServicioClienteContext
-BoundedContext RegistroClienteContext
-BoundedContext PerfilClienteContext
-BoundedContext PreferenciasClienteContext
-BoundedContext CatalogoProductosContext
-BoundedContext LogisticayEnviosContext
-BoundedContext AnalisisYReporteContext
-BoundedContext PedidosyTransaccionesContext
+BoundedContext ClienteContexto
+BoundedContext ServicioClienteContexto
+BoundedContext RegistroClienteContexto
+BoundedContext PerfilClienteContexto
+BoundedContext PreferenciasClienteContexto
+BoundedContext CatalogoProductosContexto
+BoundedContext LogisticayEnviosContexto
+BoundedContext AnalisisYReporteContexto
+BoundedContext PedidosyTransaccionesContexto
