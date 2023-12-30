@@ -34,10 +34,9 @@ ContextMap DDDSistemaECommerce{
     contains PedidosyTransaccionesContexto
 
 
-EnviosContexto <-> SeguimientoPedidosContexto
-EnviosContexto <-> AlmacenamientoContexto
-DevolucionesContexto <-> AlmacenamientoContexto
-DevolucionesContexto <-> SeguimientoPedidosContexto
+EnviosContexto [SK] <->[SK]SeguimientoPedidosContexto
+DevolucionesContexto[D] <- [U] EnviosContexto
+EnviosContexto [P]<->[P] AlmacenamientoContexto
 OrdenesContexto [P]<->[P] PagosContexto
 AutorizacionContexto <- AutenticacionContexto
 StockContexto [P]<->[P] ProveedoresContexto
