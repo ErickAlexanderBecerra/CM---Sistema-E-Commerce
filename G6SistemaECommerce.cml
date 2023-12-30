@@ -17,6 +17,15 @@ ContextMap DDDSistemaECommerce{
     contains TraduccionContexto
     contains LocalizacionContexto
     contains GestionDeProductosContexto
+    contains ClienteContext
+    contains ServicioClienteContext
+    contains RegistroClienteContext
+    contains PerfilClienteContext
+    contains PreferenciasClienteContext
+    contains CatalogoProductosContext
+    contains LogisticayEnviosContext
+    contains AnalisisYReporteContext
+    contains PedidosyTransaccionesContext
 
 
 EnviosContext <-> SeguimientoPedidosContext
@@ -31,6 +40,14 @@ AlmacenamientoContexto [U,S] -> [D,C] StockContexto
 GestionDeProductosContexto [SK] <-> [SK] CatalogoInternoContexto
 LocalizacionContexto [P] <-> [P] TraduccionContexto
 PromocionesContexto [P] <-> [P] GestionDeProductosContexto
+ClienteContext [SK]<->[SK] ServicioClienteContext
+ServicioClienteContext [D]<-[U] RegistroClienteContext
+ServicioClienteContext [D]<-[U] PerfilClienteContext
+ServicioClienteContext [D]<-[U] PreferenciasClienteContext
+CatalogoProductosContext [SK]<->[SK] LogisticayEnviosContext
+AnalisisYReporteContext [D]<-[U] LogisticayEnviosContext
+AnalisisYReporteContext [D]<-[U] PedidosyTransaccionesContext
+
 }
 
 BoundedContext SeguimientoPedidosContext
@@ -50,3 +67,12 @@ BoundedContext CatalogoInternoContexto
 BoundedContext TraduccionContexto
 BoundedContext LocalizacionContexto
 BoundedContext GestionDeProductosContexto
+BoundedContext ClienteContext
+BoundedContext ServicioClienteContext
+BoundedContext RegistroClienteContext
+BoundedContext PerfilClienteContext
+BoundedContext PreferenciasClienteContext
+BoundedContext CatalogoProductosContext
+BoundedContext LogisticayEnviosContext
+BoundedContext AnalisisYReporteContext
+BoundedContext PedidosyTransaccionesContext

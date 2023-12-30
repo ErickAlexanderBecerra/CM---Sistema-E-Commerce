@@ -1,0 +1,76 @@
+digraph "ContextMapGraph" {
+graph ["imagepath"="/tmp/GraphvizJava"]
+"AlmacenamientoContexto" ["margin"="0.3","orientation"="153","shape"="egg","fontsize"="16","style"="bold","label"="AlmacenamientoContexto\n","fontname"="sans-serif"]
+"StockContexto" ["margin"="0.3","orientation"="254","shape"="egg","fontsize"="16","style"="bold","label"="StockContexto\n","fontname"="sans-serif"]
+"ProveedoresContexto" ["margin"="0.3","orientation"="6","shape"="egg","fontsize"="16","style"="bold","label"="ProveedoresContexto\n","fontname"="sans-serif"]
+"AlmacenesContext" ["margin"="0.3","orientation"="81","shape"="egg","fontsize"="16","style"="bold","label"="AlmacenesContext\n","fontname"="sans-serif"]
+"AnalisisYReporteContext" ["margin"="0.3","orientation"="150","shape"="egg","fontsize"="16","style"="bold","label"="AnalisisYReporteContext\n","fontname"="sans-serif"]
+"AutenticacionContexto" ["margin"="0.3","orientation"="142","shape"="egg","fontsize"="16","style"="bold","label"="AutenticacionContexto\n","fontname"="sans-serif"]
+"AutorizacionContexto" ["margin"="0.3","orientation"="225","shape"="egg","fontsize"="16","style"="bold","label"="AutorizacionContexto\n","fontname"="sans-serif"]
+"CalidadContexto" ["margin"="0.3","orientation"="166","shape"="egg","fontsize"="16","style"="bold","label"="CalidadContexto\n","fontname"="sans-serif"]
+"CatalogoInternoContexto" ["margin"="0.3","orientation"="64","shape"="egg","fontsize"="16","style"="bold","label"="CatalogoInternoContexto\n","fontname"="sans-serif"]
+"CatalogoProductosContext" ["margin"="0.3","orientation"="110","shape"="egg","fontsize"="16","style"="bold","label"="CatalogoProductosContext\n","fontname"="sans-serif"]
+"LogisticayEnviosContext" ["margin"="0.3","orientation"="232","shape"="egg","fontsize"="16","style"="bold","label"="LogisticayEnviosContext\n","fontname"="sans-serif"]
+"ClienteContext" ["margin"="0.3","orientation"="12","shape"="egg","fontsize"="16","style"="bold","label"="ClienteContext\n","fontname"="sans-serif"]
+"ServicioClienteContext" ["margin"="0.3","orientation"="310","shape"="egg","fontsize"="16","style"="bold","label"="ServicioClienteContext\n","fontname"="sans-serif"]
+"DevolucionesContext" ["margin"="0.3","orientation"="93","shape"="egg","fontsize"="16","style"="bold","label"="DevolucionesContext\n","fontname"="sans-serif"]
+"SeguimientoPedidosContext" ["margin"="0.3","orientation"="211","shape"="egg","fontsize"="16","style"="bold","label"="SeguimientoPedidosContext\n","fontname"="sans-serif"]
+"EnviosContext" ["margin"="0.3","orientation"="286","shape"="egg","fontsize"="16","style"="bold","label"="EnviosContext\n","fontname"="sans-serif"]
+"GestionDeProductosContexto" ["margin"="0.3","orientation"="338","shape"="egg","fontsize"="16","style"="bold","label"="GestionDeProductosContexto\n","fontname"="sans-serif"]
+"LocalizacionContexto" ["margin"="0.3","orientation"="336","shape"="egg","fontsize"="16","style"="bold","label"="LocalizacionContexto\n","fontname"="sans-serif"]
+"TraduccionContexto" ["margin"="0.3","orientation"="231","shape"="egg","fontsize"="16","style"="bold","label"="TraduccionContexto\n","fontname"="sans-serif"]
+"OrdenesContexto" ["margin"="0.3","orientation"="107","shape"="egg","fontsize"="16","style"="bold","label"="OrdenesContexto\n","fontname"="sans-serif"]
+"PagosContexto" ["margin"="0.3","orientation"="181","shape"="egg","fontsize"="16","style"="bold","label"="PagosContexto\n","fontname"="sans-serif"]
+"PedidosyTransaccionesContext" ["margin"="0.3","orientation"="139","shape"="egg","fontsize"="16","style"="bold","label"="PedidosyTransaccionesContext\n","fontname"="sans-serif"]
+"PerfilClienteContext" ["margin"="0.3","orientation"="284","shape"="egg","fontsize"="16","style"="bold","label"="PerfilClienteContext\n","fontname"="sans-serif"]
+"PreferenciasClienteContext" ["margin"="0.3","orientation"="101","shape"="egg","fontsize"="16","style"="bold","label"="PreferenciasClienteContext\n","fontname"="sans-serif"]
+"PromocionesContexto" ["margin"="0.3","orientation"="318","shape"="egg","fontsize"="16","style"="bold","label"="PromocionesContexto\n","fontname"="sans-serif"]
+"RegistroClienteContext" ["margin"="0.3","orientation"="216","shape"="egg","fontsize"="16","style"="bold","label"="RegistroClienteContext\n","fontname"="sans-serif"]
+"AlmacenamientoContexto" -> "StockContexto" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="Customer/Supplier","dir"="none","fontname"="sans-serif"]
+"StockContexto" -> "ProveedoresContexto" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"AutenticacionContexto" -> "AutorizacionContexto" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"CalidadContexto" -> "AlmacenamientoContexto" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"CatalogoProductosContext" -> "LogisticayEnviosContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"LogisticayEnviosContext" -> "AnalisisYReporteContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"ClienteContext" -> "ServicioClienteContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"DevolucionesContext" -> "SeguimientoPedidosContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"DevolucionesContext" -> "AlmacenesContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"EnviosContext" -> "SeguimientoPedidosContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"EnviosContext" -> "AlmacenesContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"GestionDeProductosContexto" -> "CatalogoInternoContexto" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"LocalizacionContexto" -> "TraduccionContexto" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"OrdenesContexto" -> "PagosContexto" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"PedidosyTransaccionesContext" -> "AnalisisYReporteContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"PerfilClienteContext" -> "ServicioClienteContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"PreferenciasClienteContext" -> "ServicioClienteContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"PromocionesContexto" -> "GestionDeProductosContexto" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"RegistroClienteContext" -> "ServicioClienteContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+}
