@@ -35,7 +35,6 @@ ContextMap DDDSistemaECommerce{
     // AdministracionEmpleados
     contains GestionCuentasEmpleadoContexto
     contains CapacitacionContexto
-
     //Marketing
     contains CampanasPublicitariasContexto
     contains EstrategiasPromocionalesContexto
@@ -70,6 +69,8 @@ ClienteContexto[D] <-[U]CatalogoProductosContexto
 PedidosyTransaccionesContexto[U]->[D] SeguimientoPedidosContexto
 LogisticayEnviosContexto <-> EnviosContexto
 LogisticayEnviosContexto <-> AlmacenamientoContexto
+CampanasPublicitariasContexto [P] <-> [P] PreferenciasClienteContexto
+GestionCuentasEmpleadoContexto [SK]<->[SK] AutorizacionContexto 
 
 }
 
