@@ -7,17 +7,30 @@ ContextMap DDDSistemaECommerce{
     contains OrdenesContexto
     contains PagosContexto
     contains AutenticacionContexto
-	  contains AutorizacionContexto
+	contains AutorizacionContexto
+    contains StockContexto
+    contains ProveedoresContexto
+    contains AlmacenamientoContexto
+    contains CalidadContexto
+    contains PromocionesContexto
+    contains CatalogoInternoContexto
+    contains TraduccionContexto
+    contains LocalizacionContexto
+    contains GestionDeProductosContexto
 
 
 EnviosContext <-> SeguimientoPedidosContext
 EnviosContext <-> AlmacenesContext
 DevolucionesContext <-> AlmacenesContext
 DevolucionesContext <-> SeguimientoPedidosContext
- OrdenesContexto [P]<->[P] PagosContexto
+OrdenesContexto [P]<->[P] PagosContexto
 AutorizacionContexto <- AutenticacionContexto
-
-
+StockContexto [P]<->[P] ProveedoresContexto
+CalidadContexto [P] <-> [P] AlmacenamientoContexto
+AlmacenamientoContexto [U,S] -> [D,C] StockContexto
+GestionDeProductosContexto [SK] <-> [SK] CatalogoInternoContexto
+LocalizacionContexto [P] <-> [P] TraduccionContexto
+PromocionesContexto [P] <-> [P] GestionDeProductosContexto
 }
 
 BoundedContext SeguimientoPedidosContext
@@ -28,3 +41,12 @@ BoundedContext OrdenesContexto
 BoundedContext PagosContexto
 BoundedContext AutenticacionContexto
 BoundedContext AutorizacionContexto
+BoundedContext StockContexto
+BoundedContext ProveedoresContexto
+BoundedContext AlmacenamientoContexto
+BoundedContext CalidadContexto
+BoundedContext PromocionesContexto
+BoundedContext CatalogoInternoContexto
+BoundedContext TraduccionContexto
+BoundedContext LocalizacionContexto
+BoundedContext GestionDeProductosContexto
