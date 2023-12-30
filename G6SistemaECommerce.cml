@@ -1,0 +1,18 @@
+ContextMap DDDSistemaECommerce{
+    
+    contains SeguimientoPedidosContext
+    contains EnviosContext
+    contains DevolucionesContext
+    contains AlmacenesContext
+
+  EnviosContext <-> SeguimientoPedidosContext
+EnviosContext <-> AlmacenesContext
+DevolucionesContext <-> AlmacenesContext
+DevolucionesContext <-> SeguimientoPedidosContext
+
+}
+
+BoundedContext SeguimientoPedidosContext
+BoundedContext EnviosContext
+BoundedContext DevolucionesContext
+BoundedContext AlmacenesContext
