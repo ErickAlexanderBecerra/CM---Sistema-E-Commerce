@@ -59,7 +59,7 @@ CatalogoProductosContexto [SK]<->[SK] LogisticayEnviosContexto
 AnalisisYReporteContexto [D]<-[U] LogisticayEnviosContexto
 AnalisisYReporteContexto [D]<-[U] PedidosyTransaccionesContexto
 CampanasPublicitariasContexto [P]<->[P] EstrategiasPromocionalesContexto
-GestionCuentasEmpleadoContexto [CF]<- CapacitacionContexto
+GestionCuentasEmpleadoContexto [P]<->[P]CapacitacionContexto
 
 //AGREGADO FINAL 
 StockContexto<->CatalogoProductosContexto
@@ -71,6 +71,9 @@ LogisticayEnviosContexto <-> EnviosContexto
 LogisticayEnviosContexto <-> AlmacenamientoContexto
 CampanasPublicitariasContexto [P] <-> [P] PreferenciasClienteContexto
 GestionCuentasEmpleadoContexto [SK]<->[SK] AutorizacionContexto 
+SeguimientoPedidosContexto[D] <- [U]OrdenesContexto
+PagosContexto[P]<->[P]ClienteContexto
+PromocionesContexto[P]<->[P]PreferenciasClienteContexto
 
 }
 
