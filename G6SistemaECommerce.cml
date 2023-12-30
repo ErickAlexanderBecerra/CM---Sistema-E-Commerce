@@ -4,11 +4,19 @@ ContextMap DDDSistemaECommerce{
     contains EnviosContext
     contains DevolucionesContext
     contains AlmacenesContext
+    contains OrdenesContexto
+    contains PagosContexto
+    contains AutenticacionContexto
+	  contains AutorizacionContexto
 
-  EnviosContext <-> SeguimientoPedidosContext
+
+EnviosContext <-> SeguimientoPedidosContext
 EnviosContext <-> AlmacenesContext
 DevolucionesContext <-> AlmacenesContext
 DevolucionesContext <-> SeguimientoPedidosContext
+ OrdenesContexto [P]<->[P] PagosContexto
+AutorizacionContexto <- AutenticacionContexto
+
 
 }
 
@@ -16,3 +24,7 @@ BoundedContext SeguimientoPedidosContext
 BoundedContext EnviosContext
 BoundedContext DevolucionesContext
 BoundedContext AlmacenesContext
+BoundedContext OrdenesContexto
+BoundedContext PagosContexto
+BoundedContext AutenticacionContexto
+BoundedContext AutorizacionContexto
